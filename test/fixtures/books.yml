@@ -2,12 +2,25 @@
 
 one:
   title: MyString
-  description: MyString
-  image_url: MyString
+  author: MyText
+  description: MyText
+  image_url: lorem.jpg
   price: 1
 
 two:
-  title: MyString
-  description: MyString
-  image_url: MyString
+  title: lorem.jpg
+  author: MyText
+  description: MyText
+  image_url: lorem.jpg
   price: 1
+  
+ruby: 
+  title:       Programming Ruby 2.5
+  author:  John Smith
+  description: 
+    Ruby is the fastest growing and most exciting dynamic
+    language out there.  If you need to get working programs
+    delivered fast, you should add Ruby to your toolbox.
+  price:       49.50
+  image_url:   ruby.jpg 
+

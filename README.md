@@ -23,3 +23,6 @@ Things you may want to cover:
 
 * ...
 # mirific_bookshop_app
+
+Testing validations for the Book model:
+    rails test:models
