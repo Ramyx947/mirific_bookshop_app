@@ -31,3 +31,13 @@
 
 en:
   hello: "Hello world"
+  # change to use pound sign
+  number:
+    currency:
+        format:
+            format: "%u%n"
+            unit: "&pound;"
+            
+            separator: "."
+            delimiter: ","
+            precision: 2

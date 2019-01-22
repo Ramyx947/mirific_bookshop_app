@@ -11,7 +11,7 @@
                 <h4> <%= book.author %></h4>
                 <p> <%= sanitize(book.description) %> </p>
                 <div class="price">
-                    <p> <strong>Price:</strong> £<%= book.price %> </p>
+                   <%= number_to_currency(book.price) %>
                 </div>
         </li>
     <%end%>
