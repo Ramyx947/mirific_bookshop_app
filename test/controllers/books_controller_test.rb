@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class BooksControllerTest < ActionDispatch::IntegrationTest
+  # unit testing for Book Model
+  # run using rails test:models
   setup do
     @book = books(:one)
     @title = "Mirific test book #{rand(1000)}"

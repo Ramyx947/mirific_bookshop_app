@@ -4,16 +4,20 @@
 <h1> Mirific Bookshop Catalog </h1>
 
 <ul class="catalog">
-    <% @books.each do |book|%>
-        <li>
-            <%= image_tag(book.image_url) %>
-                <h2> <%= book.title %></h2>
-                <h4> <%= book.author %></h4>
-                <p> <%= sanitize(book.description) %> </p>
-                <div class="price">
-                   <%= number_to_currency(book.price) %>
-                </div>
-        </li>
+    <%= cache @books do%>
+        <% @books.each do |book|%>
+            <%= cache book do%>
+                <li>
+                    <%= image_tag(book.image_url) %>
+                        <h2> <%= book.title %> </h2>
+                        <h4> <%= book.author %> </h4>
+                        <p> <%= sanitize(book.description) %> </p>
+                        <div class="price">
+                            <%= number_to_currency(book.price) %>
+                        </div>
+                </li>
+            <%end%>
+        <%end%>
     <%end%>
 </ul>
 
