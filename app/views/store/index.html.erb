@@ -14,6 +14,7 @@
                         <p> <%= sanitize(book.description) %> </p>
                         <div class="price">
                             <%= number_to_currency(book.price) %>
+                            <%= button_to 'Add to basket', line_items_path(book_id: book) %>
                         </div>
                 </li>
             <%end%>
