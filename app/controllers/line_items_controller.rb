@@ -24,7 +24,7 @@ class LineItemsController < ApplicationController
 
   def create
     book = Book.find(params[:book_id])
-    @line_item = @cart.add_book(book)
+    @line_item = @cart.line_items.build(book: book)
 
     respond_to do |format|
       if @line_item.save
@@ -56,7 +56,8 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to line_items_url,
+        notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
