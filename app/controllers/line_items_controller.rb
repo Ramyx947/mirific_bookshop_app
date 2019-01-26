@@ -24,12 +24,11 @@ class LineItemsController < ApplicationController
 
   def create
     book = Book.find(params[:book_id])
-    @line_item = @cart.line_items.build(book: book)
+    @line_item = @cart.add_book(book)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart,
-          notice: 'Line item was successfully created.' }
+        format.html { redirect_to store_index_url }
         format.json { render :show,
           status: :created, location: @line_item }
       else

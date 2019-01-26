@@ -5,7 +5,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   # run using rails test:models
   setup do
     @book = books(:one)
-    @title = "Mirific test book #{rand(1000)}"
+    @title = "The great book #{rand(1000)}"
   end
 
   test "should get index" do
@@ -45,24 +45,16 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update book" do
-    patch book_url(@book),params:{ book: 
-        { 
-          title: @title,
-          author: @book.author,
-          description: @book.description, 
-          image_url: @book.image_url, 
-          price: @book.price, 
+    patch book_url(@book),params: { 
+      book: { 
+        author: @book.author,  
+        description: @book.description, 
+        image_url: @book.image_url, 
+        price: @book.price, 
+        title: @title, 
         } 
       }
     assert_redirected_to book_url(@book)
-  end
-
-  test "should destroy book" do
-    assert_difference('Book.count', -1) do
-      delete book_url(@book)
-    end
-
-    assert_redirected_to books_url
   end
 
   test "cant't delete book in cart" do
@@ -78,4 +70,5 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to books_url
   end
+
 end

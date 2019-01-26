@@ -35,10 +35,10 @@
           display: inline;
         }
         input[type="submit"] {
-          background-color: #103483;
-          box-shadow: 0px 10px 14px -7px #0b1164;
+          background-color: #187a81;
+          box-shadow: 0px 10px 14px -7px #42a0a7;
           border-radius:4px;
-          border:1px solid #0b1164;
+          border:1px solid #0a595f;
           display:inline-block;
           cursor:pointer;
           color:#ffffff;
@@ -47,16 +47,12 @@
           font-weight:bold;
           padding:6px 12px;
           text-decoration:none;
-          text-shadow:0px 1px 0px #4f6896;
+          text-shadow:0px 1px 0px #0d3d41;
           padding: 0.354em 1em;
-        }
-        input[type="submit"]:hover {
+      }
+      input[type="submit"]:hover {
           background-color:#28aabb
-        }
-        input[type="submit"]:active {
-            position:relative;
-            top:1px;
-        }
+      }
       }
     }
   }

@@ -38,19 +38,17 @@
         }
     }
     input[type="submit"] {
-        background-color: #103483;
-        box-shadow: 0px 10px 14px -7px #0b1164;
-        border-radius:4px;
-        border:1px solid #0b1164;
+        background-color: #59bbc2;
+        box-shadow: 0px 10px 14px -7px #42a0a7;
+        border-radius:3px;
+        border:1px solid #0a595f;
         display:inline-block;
         cursor:pointer;
-        color:#ffffff;
+        color:#040404;
         font-family:Arial;
-        font-size:23px;
+        font-size:20px;
         font-weight:bold;
-        padding:6px 12px;
-        text-decoration:none;
-        text-shadow:0px 1px 0px #4f6896;
+        padding:2px 6px;
         padding: 0.354em 1em;
     }
     input[type="submit"]:hover {
