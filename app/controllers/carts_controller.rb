@@ -53,6 +53,9 @@ class CartsController < ApplicationController
     end
   end
 
+  def update_quantity
+    @line_item.update_attribute(:quantity)
+  end
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy

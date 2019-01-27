@@ -50,7 +50,11 @@ class BooksController < ApplicationController
         format.html { redirect_to @book,
           notice: 'Book was successfully updated.' }
         format.json { render :show, status: :ok, location: @book }
-      else
+        
+        @books = Book.all
+        ActionCable.server.broadcast 'books', html: render_to_string('store/index', layout: false)
+
+        else
         format.html { render :edit }
         format.json { render json: @book.errors,
           status: :unprocessable_entity }
@@ -68,19 +72,6 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-  # def destroy
-  #   @product = Product.find(params[:id])
-  #   if @product.destroy
-  #     flash[:notice] = "#{@product.title} successfully deleted"
-  #   else
-  #     flash[:notice] = "It appears there are other carts that currently have #{@product.title} so we won't delete it at this time"
-  #   end
-  
-  #   respond_to do |format|
-  #     format.html { redirect_to products_url }
-  #     format.json { head :no_content }
-  #   end
-  # end
 
   private
  
