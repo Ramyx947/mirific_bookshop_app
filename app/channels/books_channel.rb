@@ -1,6 +1,5 @@
 class BooksChannel < ApplicationCable::Channel
   def subscribed
-    # The subscribed callback is invoked when a client-side subscription is initiated;
     stream_from 'books'
   end
 

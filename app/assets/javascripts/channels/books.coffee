@@ -7,4 +7,4 @@ App.books = App.cable.subscriptions.create "BooksChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-  document.querySelector("main").innerHTML = data.html
+    document.getElementsByTagName("main")[0].innerHTML = data.html

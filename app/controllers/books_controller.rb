@@ -52,8 +52,9 @@ class BooksController < ApplicationController
         format.json { render :show, status: :ok, location: @book }
         
         @books = Book.all
-        ActionCable.server.broadcast 'books', html: render_to_string('store/index', layout: false)
-
+        ActionCable.server.broadcast 'books',
+            html: render_to_string('store/index',
+            layout:false)
         else
         format.html { render :edit }
         format.json { render json: @book.errors,
@@ -73,6 +74,15 @@ class BooksController < ApplicationController
     end
   end
 
+  def who_bought
+    @book = Book.find(params[:id])
+    @latest_order = @book.orders.order(:updated_at).last 
+    if stale?(@latest_order)
+      respond_to do |format|
+        format.atom 
+      end
+    end
+  end
   private
  
     def set_book
